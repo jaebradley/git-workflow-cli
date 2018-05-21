@@ -6,5 +6,5 @@ import pkg from '../../package.json';
 
 program.version(pkg.version)
   .description('Git Workflow Shortcuts')
-  .command('pmdcb', 'Pull master, delete current branch')
+  .command('dcb', 'Pull master, delete current branch')
   .parse(process.argv);
