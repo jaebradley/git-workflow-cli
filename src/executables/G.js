@@ -9,4 +9,5 @@ program.version(pkg.version)
   .command('dcb', 'Pull master, delete current branch')
   .command('dab', 'Pull master, delete all local branches that have been merged')
   .command('rcb', 'Pull master, rebase current branch')
+  .command('rcbfp', 'Pull master, rebase current branch, and force push')
   .parse(process.argv);
