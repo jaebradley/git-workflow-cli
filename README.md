@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/jaebradley/git-workflow-cli.svg?branch=master)](https://travis-ci.org/jaebradley/git-workflow-cli)
 [![npm](https://img.shields.io/npm/v/git-workflow-cli.svg)](https://www.npmjs.com/package/git-workflow-cli)
-[![npm](https://img.shields.io/npm/dt/git-workflow-cli.svg)](https://www.npmjs.com/package/git-workflow-cli)
+[![npm](https://img.shields.io/npm/dt/git-workflow-cli.svg)](https://www.npmjs.com/package/git-workflow-cli) [![Greenkeeper badge](https://badges.greenkeeper.io/jaebradley/git-workflow-cli.svg)](https://greenkeeper.io/)
 
 Some minor `git` workflow commands that I could probably write bash scripts for.
 
