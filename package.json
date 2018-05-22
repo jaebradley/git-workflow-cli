@@ -21,13 +21,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jaebradley/git-shortcuts-cli.git"
+    "url": "https://github.com/jaebradley/git-workflow-cli.git"
   },
   "keywords": [],
   "bugs": {
-    "url": "https://github.com/jaebradley/git-shortcuts-cli/issues"
+    "url": "https://github.com/jaebradley/git-workflow-cli/issues"
   },
-  "homepage": "https://github.com/jaebradley/git-shortcuts-cli#readme",
+  "homepage": "https://github.com/jaebradley/git-workflow-cli#readme",
   "jest": {
     "testEnvironment": "node"
   },
@@ -57,7 +57,7 @@
     "eslint-plugin-import": "^2.12.0",
     "husky": "^0.14.3",
     "jest": "^22.4.4",
-    "semantic-release": "^15.4.1",
+    "semantic-release": "^15.5.0",
     "travis-deploy-once": "^5.0.0"
   }
 }
