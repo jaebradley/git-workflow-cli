@@ -1,10 +1,9 @@
 import git from 'simple-git/promise';
-import chalk from 'chalk';
 
 import promptForceDelete from './prompts/promptForceDelete';
 import forceDeleteBranch from './forceDeleteBranch';
-
-const getDeletedBranchMessage = branchName => chalk.bold.redBright(`🗑  Deleted ${branchName}`);
+import { getDeletedBranchMessage } from './messages';
+import isFullyMergedErrorMessage from './isFullyMergedErrorMessage';
 
 const deleteBranch = async (branchName) => {
   const client = git(process.cwd());
@@ -14,7 +13,7 @@ const deleteBranch = async (branchName) => {
     console.log(deletedBranchMessage);
   } catch (e) {
     // error will already be console logged
-    if (e.message.indexOf(`The branch '${branchName}' is not fully merged.`) >= 0) {
+    if (isFullyMergedErrorMessage({ error: e, branchName })) {
       const { shouldForceDelete } = await promptForceDelete();
       if (shouldForceDelete) {
         await forceDeleteBranch();

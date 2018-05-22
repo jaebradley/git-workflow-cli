@@ -1,42 +1,21 @@
 import git from 'simple-git/promise';
-import chalk from 'chalk';
 
-import promptForceDelete from './prompts/promptForceDelete';
-
-const getCheckoutBranchMessage = branchName => chalk.bold.cyanBright(`🔍  Checked out ${branchName}`);
-const getDeletedBranchMessage = branchName => chalk.bold.redBright(`🗑  Deleted ${branchName}`);
+import {
+  getCheckoutBranchMessage,
+  getPulledFromMasterMessage,
+} from './messages';
+import deleteBranch from './deleteBranch';
 
 const deleteCurrentBranch = async () => {
   try {
     const client = git(process.cwd());
     const status = await client.status();
     const { current: currentBranchName } = status;
-    const checkoutBranchMessage = getCheckoutBranchMessage(currentBranchName);
-    const deletedBranchMessage = getDeletedBranchMessage(currentBranchName);
-
-    try {
-      await client.checkout('master');
-      console.log(checkoutBranchMessage);
-      await client.pull('origin', 'master');
-      console.log(chalk.bold.greenBright('🕹️  Pulled origin/master'));
-      await client.deleteLocalBranch(currentBranchName);
-      console.log(deletedBranchMessage);
-    } catch (e) {
-      // error will already be console logged
-      if (e.message.indexOf(`The branch '${currentBranchName}' is not fully merged.`) >= 0) {
-        const { shouldForceDelete } = await promptForceDelete();
-        if (shouldForceDelete) {
-          await client.deleteLocalBranch(currentBranchName);
-          console.log(deletedBranchMessage);
-        } else {
-          await client.checkout(currentBranchName);
-          console.log(checkoutBranchMessage);
-        }
-      } else {
-        await client.checkout(currentBranchName);
-        console.log(checkoutBranchMessage);
-      }
-    }
+    await client.checkout('master');
+    console.log(getCheckoutBranchMessage('master'));
+    await client.pull('origin', 'master');
+    console.log(getPulledFromMasterMessage());
+    await deleteBranch(currentBranchName);
   } catch (e) {
     // error will already be console logged
   }
