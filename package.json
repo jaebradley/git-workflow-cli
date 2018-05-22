@@ -6,6 +6,14 @@
   "bin": {
     "G": "./build/executables/G.js"
   },
+  "keywords":[
+    "git",
+    "shortcuts",
+    "workflow",
+    "cli",
+    "git shortcuts",
+    "git workflow"
+  ],
   "global": true,
   "scripts": {
     "codecov": "codecov",
@@ -23,7 +31,6 @@
     "type": "git",
     "url": "https://github.com/jaebradley/git-workflow-cli.git"
   },
-  "keywords": [],
   "bugs": {
     "url": "https://github.com/jaebradley/git-workflow-cli/issues"
   },
