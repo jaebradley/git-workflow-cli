@@ -9,7 +9,7 @@ const checkoutAndPullMaster = async () => {
   const client = git(process.cwd());
   await client.checkout('master');
   console.log(getCheckoutBranchMessage('master'));
-  await client.pull('origin', 'master');
+  await client.pull('origin', 'master', { '--no-rebase': null });
   console.log(getPulledFromMasterMessage());
 };
 
