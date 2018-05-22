@@ -6,7 +6,7 @@
   "bin": {
     "G": "./build/executables/G.js"
   },
-  "keywords":[
+  "keywords": [
     "git",
     "shortcuts",
     "workflow",
