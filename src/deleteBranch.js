@@ -16,7 +16,7 @@ const deleteBranch = async (branchName) => {
     if (isFullyMergedErrorMessage({ error: e, branchName })) {
       const { shouldForceDelete } = await promptForceDelete();
       if (shouldForceDelete) {
-        await forceDeleteBranch();
+        await forceDeleteBranch(branchName);
         console.log(deletedBranchMessage);
       }
     }
