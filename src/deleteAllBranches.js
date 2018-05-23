@@ -25,7 +25,7 @@ const deleteAllBranches = async () => {
       }
     });
     await pruneLocalRemoteBranches();
-    console.log(chalk.redBright('✂️  Pruned local remote branches'));
+    console.log(chalk.bold.redBright('✂️  Pruned local remote branches'));
   } catch (e) {
     // error will be console logged
   }
