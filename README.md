@@ -18,3 +18,17 @@ Some minor `git` workflow commands that I could probably write bash scripts for.
   * Find all `merged` branches via the `git branch --merged master` command
   * Delete all branches
   * Prune all remote local branches
+* `G rcb` - Rebase current branch against `master`
+  * Checkout `master`
+  * Pull from `origin`
+  * Checkout previous branch
+  * Rebase against `master`
+* `G rcbfp` - Rebase current branch against `master` and force `push`
+  * Checkout `master`
+  * Pull from `origin`
+  * Checkout previous branch
+  * Rebase against `master`
+  * Force push branch to `origin`
+* `G cpm` - Checkout and pull `origin/master`
+  * Checkout `master`
+  * Pull from `origin`
