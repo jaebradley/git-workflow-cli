@@ -44,7 +44,7 @@
     "chalk": "^2.4.1",
     "child-process-promise": "^2.2.1",
     "commander": "^2.15.1",
-    "inquirer": "^6.0.0",
+    "inquirer": "^7.0.0",
     "simple-git": "^1.92.0"
   },
   "devDependencies": {
